@@ -1,0 +1,79 @@
+FlipFit - SDE2
+Design a backend system for a new enterprise application that Flipkart is launching, FlipFit. Flipkart is partnering up with gyms across Bangalore to enter into the fitness space. For the Beta launch the requirements are as follows:
+● There are only 2 centers for now - Koramangala and Bellandur. We plan to expand to multiple others if we get traction.
+● Each center has n slots of an hour each. For eg the Bellandur center has only 6 slots - 3 in the morning of an hour each from 6am to 9am and similarly 3 in the evening from 6pm to 9pm. All the centers are open 7 days a week.
+● Each slot at a center can have n possible workout variations - Weights, Cardio, Yoga, Swimming etc. There could be newer workouts added at center/slot level in the future. Adding new workout types should be easy and lead to minimal or no changes in application.
+● The number of seats in each workout at each time-slot for a given center is fixed.
+● For simplicity’s sake you can assume that the workout info will be entered by the Admin only once.
+● View his/her plan basis day/workout type/center as input. It should be easy to change the view pattern.
+● User can perform the following operations:
+● Register onto the platform
+● View the workouts availability/unavailability for a particular day
+● Book a workout for a user if seats are available in that time slot at that center
+● A User can be of different type regular, premium.
+● A regular user will be promoted to premium based on some strategy defined at center level (e.g minimum 7 booking in the last 10 days) for simplicity let's keep it the same for all centers.
+● A premium user can book slots for the future day in advance (let's allow only the next day for now)
+
+Bonus: return the nearest time slot for the same workout/center/user combination, keeping in mind his other booked slots
+Guideline:
+● Time: 90mins
+● Write modular and clean code.
+● A driver program/main class/test case is needed to test out the code by the evaluator with multiple test cases. But do not spend too much time in the input parsing. Keep it as simple as possible.
+● Evaluation criteria: Demoable & functionally correct code, Code readability, Proper Entity modeling, Modularity & Extensibility, Separation of concerns, Abstractions. Use design patterns wherever applicable
+● You are not allowed to use any external databases like MySQL. Use only in memory data structures.
+● No need to create any UX
+● Please focus on the Bonus Feature only after ensuring the required features are complete and demoable.
+
+
+
+Kormangala
+Slot1:- 6:00 to 9:00
+Slot2:- 18:00 to 21:00
+
+AvailableWorkouts: Weights, Cardio, Yoga, Swimming
+
+Bellandur
+Slot1:- 7:00 to 10:00
+Slot2:- 19:00 to 22:00
+
+AvailableWorkouts: Weights, Cardio, Yoga
+
+Add Workout and seats to location
+addWorkout(“Koramangala”, “Weights”, 6, 7, 100)
+addWorkout(“Koramangala”, “Cardio”, 7, 8, 150)
+addWorkout(“Koramangala”, “Yoga”, 8, 9, 200)
+
+addWorkout(“Bellandur”, “Weights”, 18, 19, 100)
+addWorkout(“Bellandur”, “Cardio”, 18, 19, 20)
+Register user
+register(“Ashutosh”)
+register(“Vineet”)
+
+Workout availability
+viewWorkoutAvailability(“Weights”, “2022-06-02”)
+“Koramangala”, “Weights”, 6, 7, 100
+“Bellandur”, “Weights”, 18, 19, 100
+
+viewWorkoutAvailability(“Cardio”,  “2022-06-02”)
+“Koramangala”, “Cardio”, 7, 8, 150
+‘’Bellandur”, “Cardio”,18,19, 20
+Session Booking
+bookSession(“Ashutosh”, “Koramangala”, “Weight”, 6, 7,  “2022-06-02”)
+
+viewWorkoutAvailability(“Weights”,  “2022-06-02”)
+“Koramangala”, “Weights”, 6, 7, 99
+“Bellandur”, “Weights”, 18, 19, 100
+
+View Schedule
+viewSchedule(“Ashutosh”, “2022-06-02”);
+Koramangala, Weights, 6, 7
+
+bookSession(“Vineet”, “Bellandur”, “Weight”, 18, 19, “2022-06-02”)
+bookSession(“Vineet”, “Bellandur”, “Cardio”, 18, 19, “2022-06-02”)
+> error: User has already a booked slot for same date and time
+
+bookSession(“Vineet”, “Bellandur”, “Cardio”, 18, 19, “2022-06-03”)
+> Vineet can’t book for a future date.
+
+
+CODE & RESUME UPLOAD LINK : https://forms.gle/41tjJ9WHzEKF3nmc8

@@ -1,0 +1,44 @@
+{
+  "cup": {
+    "US": [
+      {
+        "price": 5,
+        "minQty": 0,
+        "maxQty": null
+      }
+    ],
+    "CA": [
+      {
+        "price": 5,
+        "minQty": 0,
+        "maxQty": 2
+      },
+      {
+        "price": 3,
+        "minQty": 2,
+        "maxQty": 2
+      }
+    ]
+  },
+  "shoe": {
+    "US": [
+      {
+        "price": 5,
+        "minQty": 0,
+        "maxQty": 3
+      },
+      {
+        "price": 2,
+        "minQty": 4,
+        "maxQty": null
+      }
+    ],
+    "CA": [
+      {
+        "price": 3,
+        "minQty": 0,
+        "maxQty": null
+      }
+    ]
+  }
+}

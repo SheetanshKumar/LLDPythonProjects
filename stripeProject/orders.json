@@ -1,0 +1,26 @@
+{
+  "US": {
+    "items": [
+      {
+        "quantity": 5,
+        "item": "cup"
+      },
+      {
+        "quantity": 4,
+        "item": "shoe"
+      }
+    ]
+  },
+  "CA": {
+    "items": [
+      {
+        "quantity": 3,
+        "item": "cup"
+      },
+      {
+        "quantity": 6,
+        "item": "shoe"
+      }
+    ]
+  }
+}
